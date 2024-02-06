@@ -11,7 +11,7 @@ public class Jugador : MonoBehaviour
     public CSVWriter csvWriter = new CSVWriter();
 
     public int vidas = 5;
-    public float tiempoJugado = 0f;
+    public static float tiempoJugado = 0f;
     public int numColisiones = 0;
 
     public GameObject finalizar;

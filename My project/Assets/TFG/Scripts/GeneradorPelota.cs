@@ -27,14 +27,14 @@ public class GeneradorPelota : MonoBehaviour
         {
             float posicionZ, posicionY, posicionX, velocidadAleatoria;
 
-            if(Jugador.Instance.tiempoJugado <= 25)
+            if(Jugador.tiempoJugado > 0 && Jugador.tiempoJugado <= 25)
             {
                 posicionZ = Random.Range(-0.7f, 1.9f);
                 posicionY = Random.Range(1f, 2f);
                 velocidadAleatoria = Random.Range(7f, 9f);
-                tiempoEntrePelotas = 2;
+                tiempoEntrePelotas = 2f;
             }
-            if(Jugador.Instance.tiempoJugado > 25 && Jugador.Instance.tiempoJugado <= 45 )
+            else if(Jugador.tiempoJugado > 25 && Jugador.tiempoJugado <= 45 )
             {
                 posicionZ = Random.Range(-0.7f, 1.9f);
                 posicionY = Random.Range(1f, 2f);
@@ -64,12 +64,14 @@ public class GeneradorPelota : MonoBehaviour
             rb.AddForce(direccion , ForceMode.Impulse);
 
             //Agregamos la nueva pelota
-           // Jugador.Instance.csvWriter.nuevaPelota.velocidad = velocidadAleatoria;
-         //   Jugador.Instance.csvWriter.nuevaPelota.posición = "";
-           // Jugador.Instance.csvWriter.nuevaPelota.tiempo = Jugador.Instance.tiempoJugado;
+            Pelota pelota = new Pelota();
+            pelota.velocidad = velocidadAleatoria;
+            pelota.posición = "";
+            pelota.tiempo = Jugador.tiempoJugado;
 
-            //Jugador.Instance.csvWriter.pelotas.lista.Add(Jugador.Instance.csvWriter.nuevaPelota);
+            Jugador.Instance.csvWriter.pelotas.Add(pelota);
 
+          
             // Esperar un tiempo antes de generar la siguiente pelota
             yield return new WaitForSeconds(tiempoEntrePelotas);
             Destroy(nuevaPelota);

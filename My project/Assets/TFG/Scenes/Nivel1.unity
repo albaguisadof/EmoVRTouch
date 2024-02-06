@@ -2022,6 +2022,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jugador: PruebaAlba
+  pelotas: []
 --- !u!4 &1205387804
 Transform:
   m_ObjectHideFlags: 0
@@ -3569,6 +3570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b19bf4729688d7438267984fd3dff48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  csvWriter: {fileID: 1205387803}
   vidas: 5
   numColisiones: 0
   finalizar: {fileID: 988025774}
