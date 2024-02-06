@@ -1,11 +1,11 @@
 # Unity
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Uu]ser[Ss]ettings/
+/MyProyect/[Ll]ibrary/
+/MyProyect/[Tt]emp/
+/MyProyect/[Oo]bj/
+/MyProyect/[Bb]uild/
+/MyProyect/[Bb]uilds/
+/MyProyect/[Ll]ogs/
+/MyProyect/[Uu]ser[Ss]ettings/
 
 # VS/MD specific files
 *.sln
