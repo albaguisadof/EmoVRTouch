@@ -8,11 +8,11 @@ public class Jugador : MonoBehaviour
     private static Jugador _instance;
     public static Jugador Instance => _instance;
     OWOScript owo = new OWOScript();
+    public bool activarOWO = true;
     public CSVWriter csvWriter = new CSVWriter();
 
     public int vidas = 5;
     public static float tiempoJugado = 0f;
-    public int numColisiones = 0;
 
     public GameObject finalizar;
     public GameObject iniciar;
@@ -24,9 +24,6 @@ public class Jugador : MonoBehaviour
     // Evento para notificar cambios en las vidas
     public delegate void VidasChangedDelegate(int nuevasVidas);
     public event VidasChangedDelegate VidasChangedEvent;
-
-    private int aciertos = 0;
-    private int numPelotasLanzadas = 0;
 
     void Awake()
     {
@@ -42,8 +39,12 @@ public class Jugador : MonoBehaviour
 
         finalizar.SetActive(false);
         iniciar.SetActive(true);
-        owo.Start();
         luzRoja.intensity = 0f;
+
+        if(activarOWO)
+        {
+            owo.Start();
+        }
     }
 
     void Start()
@@ -83,30 +84,34 @@ public class Jugador : MonoBehaviour
   
     public void PerderVida()
     {
-        if (vidas > 0)
+        if(vidas > 0)
         {
             vidas--;
-            numColisiones++;
             VidasChangedEvent?.Invoke(vidas);
             owo.SendColision();
         }
         else
         {
-            numColisiones++;
+            vidas = 0;
             owo.SendColision();
-
         }
-       
+        
+    }
 
+    public void SetVidas(int vidas)
+    {
+        this.vidas = vidas;
+    }
+
+    public void GanarVida()
+    {
+        vidas++;
+        VidasChangedEvent?.Invoke(vidas);
+        owo.SendPuntoExtra();
     }
 
     public int ObtenerVidas()
     {
         return vidas;
-    }
-
-    public void IncrementarNumColisiones()
-    {
-        numColisiones++;
     }
 }

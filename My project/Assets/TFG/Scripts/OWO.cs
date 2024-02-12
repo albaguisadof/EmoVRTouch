@@ -6,8 +6,8 @@ using OWOGame;
 
 public class OWOScript 
 {
-    Sensation  colision, perder;
-    BakedSensation  bakedPresion, bakedPerder;
+    Sensation  colision, puntoExtra;
+    BakedSensation  bakedPresion, bakedPuntoExtra;
     GameAuth auth;
     Muscle[] muscles;
     bool isConnected = false;
@@ -36,7 +36,7 @@ public class OWOScript
     }
 
 
-    void crearColision()
+    void CrearColision()
     {
         colision = SensationsFactory.Create(100, 3, 90, 0.3f, 0.3f, 0);
 
@@ -58,20 +58,20 @@ public class OWOScript
         }
     }
 
-    void crearPerder()
+    void CrearPuntoExtra()
     {
-        perder = SensationsFactory.Create(100, 3, 90, 0.3f, 0.3f, 0);
+        puntoExtra = SensationsFactory.Create(100, 3, 90, 0.3f, 0.3f, 0);
 
-        perder.WithMuscles(Muscle.All);
+        puntoExtra.WithMuscles(Muscle.All);
 
-        bakedPresion = perder.Bake(3, "Perder");
+        bakedPuntoExtra = puntoExtra.Bake(3, "PuntoExtra");
     }
 
-    public void SendPerder()
+    public void SendPuntoExtra()
     {
         if (isConnected)
         {
-            OWO.Send(perder);
+            OWO.Send(puntoExtra);
             Debug.Log("send perder");
         }
         else
@@ -83,8 +83,8 @@ public class OWOScript
 
     public void Start()
     {
-        crearColision();
-        crearPerder();
+        CrearColision();
+        CrearPuntoExtra();
         Connect();
     }
 

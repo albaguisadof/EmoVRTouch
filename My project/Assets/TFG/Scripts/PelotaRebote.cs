@@ -5,7 +5,6 @@ using UnityEngine;
 public class PelotaRebote : MonoBehaviour
 {
     public float velocidadInicial = 8f;
-    public AudioSource audioSource;
 
 
 
@@ -18,15 +17,7 @@ public class PelotaRebote : MonoBehaviour
 
     }
 
-
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Suelo"))
-        {
-            audioSource.Play();
-        }
-    }
-
+  
 
     void Update()
     {

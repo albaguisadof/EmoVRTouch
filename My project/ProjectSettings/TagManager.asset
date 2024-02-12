@@ -9,6 +9,7 @@ TagManager:
   - Vida
   - Anchor
   - Suelo
+  - PuntoExtra
   layers:
   - Default
   - TransparentFX

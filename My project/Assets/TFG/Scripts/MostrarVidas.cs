@@ -30,7 +30,7 @@ public class MostrarVidas : MonoBehaviour
             estrellasCreadas.Add(nuevaEstrella); // Agregar referencia a la lista
             nuevaEstrella.enabled = true;
 
-            // Ajustar la posición en el eje X
+            // Ajustar la posición
             Vector3 nuevaPosicion = nuevaEstrella.rectTransform.position;
             nuevaPosicion.z = i  ;
             nuevaEstrella.rectTransform.position = new Vector3(-5.7f, 3.5f, i - 0.5f);

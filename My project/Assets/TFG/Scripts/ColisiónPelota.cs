@@ -6,6 +6,7 @@ public class ColisionPelota : MonoBehaviour
 {
     private HashSet<GameObject> pelotasColisionadas = new HashSet<GameObject>();
     public AudioSource audioColision;
+    public AudioSource audioPuntoExtra;
 
     public Light luzRoja;
 
@@ -32,7 +33,8 @@ public class ColisionPelota : MonoBehaviour
                 //Gestionar vidas del jugador
                 Jugador.Instance.PerderVida();
                 int vidas = Jugador.Instance.ObtenerVidas();
-                Jugador.Instance.IncrementarNumColisiones();
+                int longuitud = Jugador.Instance.csvWriter.pelotas.Count;
+                Jugador.Instance.csvWriter.pelotas[longuitud - 1].colisión = true;
 
                 Debug.Log("El rayo desde la cámara ha colisionado con la pelota. Vidas: " + vidas);
 
@@ -40,6 +42,21 @@ public class ColisionPelota : MonoBehaviour
 
                 StartCoroutine(ActivarLuzColision());
 
+            }
+            if (hit.collider.CompareTag("PuntoExtra") && !pelotasColisionadas.Contains(hit.collider.gameObject))
+            {
+                // Marcar la pelota como colisionada
+                pelotasColisionadas.Add(hit.collider.gameObject);
+
+                //Gestionar vidas del jugador
+                Jugador.Instance.GanarVida();
+                int vidas = Jugador.Instance.ObtenerVidas();
+                int longuitud = Jugador.Instance.csvWriter.pelotas.Count;
+                Jugador.Instance.csvWriter.pelotas[longuitud - 1].colisión = true;
+
+                Debug.Log("Vida extra" + vidas );
+
+                audioPuntoExtra.Play();
             }
         }
     }
