@@ -114,40 +114,45 @@ public class CSVWriter : MonoBehaviour
 
             textWriter.WriteLine(" ");
 
-            textWriter.WriteLine("PELOTAS RECIBIDAS: , " + totalPelotas + "," + (totalPelotas / (double)pelotas.Count) * 100 + "%");
+            textWriter.WriteLine("PELOTAS RECIBIDAS: , " + totalPelotas + "," + ((totalPelotas / (double)pelotas.Count) * 100).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) 
+                + "%");
             textWriter.WriteLine(", Aciertos: , " + pelotasEsquivadas + ", Derecha: , " + pelotasEsquivadasDer + ", Izquierda: ," + pelotasEsquivadasIzq);
 
             if (pelotasEsquivadas > 0)
             {
-                textWriter.WriteLine(", , " + (pelotasEsquivadas / (double)totalPelotas) * 100 + "% , , " + (pelotasEsquivadasDer / (double)pelotasEsquivadas) * 100 +
-               "%, ," + (pelotasEsquivadasIzq / (double)pelotasEsquivadas) * 100 + "%");
+                textWriter.WriteLine(", , " +( (pelotasEsquivadas / (double)totalPelotas) * 100 ).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture)
+                    + "% , , " + ((pelotasEsquivadasDer / (double)pelotasEsquivadas) * 100).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) +
+               "%, ," + ((pelotasEsquivadasIzq / (double)pelotasEsquivadas) * 100).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) + "%");
             }
           
 
             textWriter.WriteLine(", Errores: , " + pelotasColisionadas + ", Derecha: , " + pelotasColisionadasDer + ", Izquierda: ," + pelotasColisionadasIzq);
             if (pelotasColisionadas > 0)
             {
-                textWriter.WriteLine(", , " + (pelotasColisionadas / (double)totalPelotas) * 100 + "% , , " + (pelotasColisionadasDer / (double)pelotasColisionadas) * 100 +
-                "%, ," + (pelotasColisionadasIzq / (double)pelotasColisionadas) * 100 + "%");
+                textWriter.WriteLine(", , " + ((pelotasColisionadas / (double)totalPelotas) * 100).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture)
+                    + "% , , " + ((pelotasColisionadasDer / (double)pelotasColisionadas) * 100).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) +
+                "%, ," + ((pelotasColisionadasIzq / (double)pelotasColisionadas) * 100).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) + "%");
 
             }
 
             if (totalPuntosExtra > 0)
             {
                 textWriter.WriteLine(" ");
-                textWriter.WriteLine("PUNTOS EXTRAS RECIBIDOS: , " + totalPuntosExtra + "," + (totalPuntosExtra/ (double)pelotas.Count)*100 + "%");
+                textWriter.WriteLine("PUNTOS EXTRAS RECIBIDOS: , " + totalPuntosExtra + "," + ((totalPuntosExtra / (double)pelotas.Count) * 100).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) + "%");
                 textWriter.WriteLine(", Obtenidos: , " + puntosExtraObtenidos + ", Derecha: , " + puntosExtraObtenidosDer, ", Izquierda: ," + puntosExtraObtenidosIzq);
                 if(puntosExtraObtenidos > 0)
                 {
-                    textWriter.WriteLine(", , " + (puntosExtraObtenidos / (double)totalPuntosExtra) * 100 + "% , , " + (puntosExtraObtenidosDer / (double)puntosExtraObtenidos) * 100 +
-                   "%, ," + (puntosExtraObtenidosIzq / (double)puntosExtraObtenidos) * 100 + "%");
+                    textWriter.WriteLine(", , " + ((puntosExtraObtenidos / (double)totalPuntosExtra) * 100).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) + "% , , " 
+                        + ((puntosExtraObtenidosDer / (double)puntosExtraObtenidos) * 100).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) +
+                   "%, ," + ((puntosExtraObtenidosIzq / (double)puntosExtraObtenidos) * 100).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) + "%");
                 }
                
                 textWriter.WriteLine(", Esquivados: , " + puntosExtraEsquivados + ", Derecha: , " + puntosExtraEsquivadosDer + ", Izquierda: ," + puntosExtraEsquivadosIzq);
                 if(puntosExtraEsquivados > 0)
                 {
-                    textWriter.WriteLine(", , " + (puntosExtraEsquivados / (double)totalPuntosExtra) * 100 + "% , , " + (puntosExtraEsquivadosDer / (double)puntosExtraEsquivados) * 100 +
-                    "%, ," + (puntosExtraEsquivadosIzq / (double)puntosExtraEsquivados) * 100 + "%");
+                    textWriter.WriteLine(", , " + ((puntosExtraEsquivados / (double)totalPuntosExtra) * 100).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) + "% , , " +
+                        ((puntosExtraEsquivadosDer / (double)puntosExtraEsquivados) * 100).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) +
+                    "%, ," + ((puntosExtraEsquivadosIzq / (double)puntosExtraEsquivados) * 100).ToString("0.00", System.Globalization.CultureInfo.InvariantCulture) + "%");
                 }
                 
             }
