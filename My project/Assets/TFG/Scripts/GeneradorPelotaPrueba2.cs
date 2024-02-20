@@ -24,11 +24,10 @@ public class GeneradorPelotaPrueba2 : MonoBehaviour
 
         while (contador < 4) 
         {
-            // Generar posici�n aleatoria en el eje z
-            float posicionZ = Random.Range(0f, 2f);
-
-            // Generar posici�n aleatoria en el eje y
+            // Generar posición aleatoria
+            float posicionZ = Random.Range(0f, 2.5f);
             float posicionY = Random.Range(1f, 2f);
+            float posicionX = -6f;
 
 
             // Crear una nueva instancia de la pelota prefab
@@ -43,9 +42,9 @@ public class GeneradorPelotaPrueba2 : MonoBehaviour
             }
            
 
-            GameObject nuevaPelota = Instantiate(prefab, new Vector3(-6f, posicionY, posicionZ), Quaternion.identity); ;
+            GameObject nuevaPelota = Instantiate(prefab, new Vector3(posicionX, posicionY, posicionZ), Quaternion.identity); ;
 
-            // Ajustamos la velocidad
+            // Ajustamos la velocidad aleatoria
             Rigidbody rb = nuevaPelota.GetComponent<Rigidbody>();
             float velocidadAleatoria = Random.Range(7f, 9f);
             rb.velocity = Vector3.zero * velocidadAleatoria;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColisionPelota : MonoBehaviour
+public class ColisionPelotaPruebas : MonoBehaviour
 {
     private HashSet<GameObject> pelotasColisionadas = new HashSet<GameObject>();
     public AudioSource audioColision;
@@ -10,33 +10,27 @@ public class ColisionPelota : MonoBehaviour
 
     public Light luzRoja;
 
-    // Posici贸n inicial del rayo
+    // Posici髇 inicial del rayo
     Vector3 rayOrigin = new Vector3(1f, 0f, -1f);
 
 
     void Update()
     {
-        // Obtener la posici贸n de la c谩mara
+        // Obtener la posici髇 de la c醡ara
         Vector3 camPosition = Camera.main.transform.position;
         Vector3 vector3 = camPosition - rayOrigin;
 
-        // Lanzar un rayo hacia abajo desde la posici贸n de la c谩mara
+        // Lanzar un rayo hacia abajo desde la posici髇 de la c醡ara
         RaycastHit hit;
         if (Physics.Raycast(camPosition, Vector3.down, out hit))
         {
-            // Verificar si la colisi贸n es con la pelota y si no se ha contado ya esta colisi贸n
+            // Verificar si la colisi髇 es con la pelota y si no se ha contado ya esta colisi髇
             if (hit.collider.CompareTag("Pelota") && !pelotasColisionadas.Contains(hit.collider.gameObject))
             {
                 // Marcar la pelota como colisionada
                 pelotasColisionadas.Add(hit.collider.gameObject);
 
-                //Gestionar vidas del jugador
-                Jugador.Instance.PerderVida();
-                int vidas = Jugador.Instance.ObtenerVidas();
-                int longuitud = Jugador.Instance.csvWriter.pelotas.Count;
-                Jugador.Instance.csvWriter.pelotas[longuitud - 1].colisi贸n = true;
-
-                Debug.Log("El rayo desde la c谩mara ha colisionado con la pelota. Vidas: " + vidas);
+                Debug.Log("Colisi髇");
 
                 audioColision.Play();
 
@@ -48,13 +42,7 @@ public class ColisionPelota : MonoBehaviour
                 // Marcar la pelota como colisionada
                 pelotasColisionadas.Add(hit.collider.gameObject);
 
-                //Gestionar vidas del jugador
-                Jugador.Instance.GanarVida();
-                int vidas = Jugador.Instance.ObtenerVidas();
-                int longuitud = Jugador.Instance.csvWriter.pelotas.Count;
-                Jugador.Instance.csvWriter.pelotas[longuitud - 1].colisi贸n = true;
-
-                Debug.Log("Vida extra" + vidas );
+                Debug.Log("Vida extra");
 
                 audioPuntoExtra.Play();
             }
@@ -68,5 +56,3 @@ public class ColisionPelota : MonoBehaviour
         luzRoja.intensity = 1;
     }
 }
-
-

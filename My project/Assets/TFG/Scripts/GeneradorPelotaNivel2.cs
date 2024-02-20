@@ -26,25 +26,22 @@ public class GeneradorPelotaNivel2 : MonoBehaviour
 
         while (Jugador.jugando) 
         {
+            //Generar posición y velocidad aleatoria
             float posicionZ, posicionY, posicionX, velocidadAleatoria;
 
-            posicionZ = Random.Range(0f, 2f);
+            posicionX = -6f;
+            posicionZ = Random.Range(0f, 2.5f);
             posicionY = Random.Range(1f, 2f);
 
-            if (Jugador.tiempoJugado > 0 && Jugador.tiempoJugado <= 25)
+            if (Jugador.tiempoJugado > 0 && Jugador.tiempoJugado <= 30)
             {
                 velocidadAleatoria = Random.Range(7f, 9f);
                 tiempoEntrePelotas = 2f;
             }
-            else if (Jugador.tiempoJugado > 25 && Jugador.tiempoJugado <= 45)
-            {
-                velocidadAleatoria = Random.Range(8.5f, 11f);
-                tiempoEntrePelotas = 1.5f;
-            }
             else
             {
                 velocidadAleatoria = Random.Range(8.5f, 11f);
-                tiempoEntrePelotas = 1f;
+                tiempoEntrePelotas = 1.5f;
             }
 
             // Crear una nueva instancia de la pelota prefab
@@ -72,7 +69,7 @@ public class GeneradorPelotaNivel2 : MonoBehaviour
             }
            
 
-            GameObject nuevaPelota = Instantiate(prefab, new Vector3(-6f, posicionY, posicionZ), Quaternion.identity); ;
+            GameObject nuevaPelota = Instantiate(prefab, new Vector3(posicionX, posicionY, posicionZ), Quaternion.identity); ;
 
             // Ajustamos la velocidad
             Rigidbody rb = nuevaPelota.GetComponent<Rigidbody>();
@@ -89,7 +86,7 @@ public class GeneradorPelotaNivel2 : MonoBehaviour
             pelota.velocidad = velocidadAleatoria;
             pelota.tiempo = Jugador.tiempoJugado;
 
-            if (posicionZ >= 1f)
+            if (posicionZ >= 1.25f)
             {
                 pelota.posición = "Derecha";
             }

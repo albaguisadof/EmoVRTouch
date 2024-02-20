@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -242,7 +242,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 20de67e5794903749af91cbfa51bafd0, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9864457c7b3357e4394260eb89595a00, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -337,11 +337,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 261681216}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 019c095bcf121e845b9ca695976bcd09, type: 3}
+  m_Script: {fileID: 11500000, guid: 80bf758cbde84864598163ea9af7eb04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pelotaPrefab: {fileID: 5033209412973417922, guid: 284af0c1adf0daa42aa2b5ad90d3d61e, type: 3}
   puntoExtraPrefab: {fileID: 5033209412973417922, guid: c488361ba23f5ae48a51b733c0e4c81d, type: 3}
+  finalizar: {fileID: 988025774}
   tiempoEntrePelotas: 2
   posicionDestino: {fileID: 1696818844}
 --- !u!1 &283526437 stripped
@@ -999,7 +1000,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7179462289238023466, guid: 65eb6b98091a5734ba9d9ca871cef69a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.304
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7179462289238023466, guid: 65eb6b98091a5734ba9d9ca871cef69a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1007,7 +1008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7179462289238023466, guid: 65eb6b98091a5734ba9d9ca871cef69a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.054
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7179462289238023466, guid: 65eb6b98091a5734ba9d9ca871cef69a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1043,13 +1044,13 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3462571325970164595, guid: 65eb6b98091a5734ba9d9ca871cef69a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1989030682}
-    - targetCorrespondingSourceObject: {fileID: 3462571325970164595, guid: 65eb6b98091a5734ba9d9ca871cef69a, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1989030681}
     - targetCorrespondingSourceObject: {fileID: 3462571325970164595, guid: 65eb6b98091a5734ba9d9ca871cef69a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1989030680}
+    - targetCorrespondingSourceObject: {fileID: 3462571325970164595, guid: 65eb6b98091a5734ba9d9ca871cef69a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1989030689}
   m_SourcePrefab: {fileID: 100100000, guid: 65eb6b98091a5734ba9d9ca871cef69a, type: 3}
 --- !u!1 &565483881
 GameObject:
@@ -3250,7 +3251,7 @@ MonoBehaviour:
   finalizar: {fileID: 988025774}
   iniciar: {fileID: 1986761524}
   luzRoja: {fileID: 1340028205}
---- !u!114 &1989030682
+--- !u!114 &1989030689
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3259,11 +3260,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1989030673}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24cdc478b2f8b23429f026389e3ec776, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a152ab4ff0dfd44580e3493bda7e215, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   audioColision: {fileID: 1989030680}
-  audioPuntoExtra: {fileID: 0}
+  audioPuntoExtra: {fileID: 261681219}
   luzRoja: {fileID: 1340028205}
 --- !u!1 &2086128278
 GameObject:
