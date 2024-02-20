@@ -6,8 +6,8 @@ using OWOGame;
 
 public class OWOScript 
 {
-    Sensation  colision, puntoExtra;
-    BakedSensation  bakedPresion, bakedPuntoExtra;
+    Sensation  colision, puntoExtra1, puntoExtra2, puntoExtra3, relajación1, relajación2, relajación3;
+    BakedSensation  bakedColision, bakedPuntoExtra, bakedRelajacion;
     GameAuth auth;
     Muscle[] muscles;
     bool isConnected = false;
@@ -38,11 +38,11 @@ public class OWOScript
 
     void CrearColision()
     {
-        colision = SensationsFactory.Create(100, 3, 90, 0.3f, 0.3f, 0);
+        colision = SensationsFactory.Create(100, 0.2f, 90, 0, 0, 0);
 
         colision.WithMuscles(Muscle.All);
 
-        bakedPresion = colision.Bake(3, "Presion");
+        bakedColision = colision.Bake(1, "Colisión");
     }
 
     public void SendColision()
@@ -50,7 +50,7 @@ public class OWOScript
         if (isConnected)
         {
             OWO.Send(colision);
-            Debug.Log("send colisión");
+            Debug.Log("Send colisión");
         }
         else
         {
@@ -60,19 +60,22 @@ public class OWOScript
 
     void CrearPuntoExtra()
     {
-        puntoExtra = SensationsFactory.Create(100, 3, 90, 0.3f, 0.3f, 0);
+        puntoExtra1 = SensationsFactory.Create(20, 0.1f, 90, 0, 0, 0);
+        puntoExtra2 = SensationsFactory.Create(20, 0.1f, 90, 0, 0, 0);
+        puntoExtra3 = SensationsFactory.Create(20, 0.2f, 90, 0, 0, 0);
 
-        puntoExtra.WithMuscles(Muscle.All);
+        puntoExtra1.WithMuscles(Muscle.Abdominal_L, Muscle.Abdominal_R, Muscle.Dorsal_L, Muscle.Dorsal_R);
+        puntoExtra2.WithMuscles(Muscle.Dorsal_R, Muscle.Dorsal_R, Muscle.Arm_L, Muscle.Arm_R);
+        puntoExtra3.WithMuscles(Muscle.Pectoral_L, Muscle.Pectoral_R);
 
-        bakedPuntoExtra = puntoExtra.Bake(3, "PuntoExtra");
     }
 
     public void SendPuntoExtra()
     {
         if (isConnected)
         {
-            OWO.Send(puntoExtra);
-            Debug.Log("send perder");
+            OWO.Send(puntoExtra1.Append(puntoExtra2.Append(puntoExtra3)));
+            Debug.Log("send Punto Extra");
         }
         else
         {
@@ -82,19 +85,27 @@ public class OWOScript
 
     void CrearRelajacion()
     {
-        puntoExtra = SensationsFactory.Create(100, 3, 90, 0.3f, 0.3f, 0);
+        relajación1 = SensationsFactory.Create(100, 1.2f, 60, 0, 0, 0);
+        relajación2 = SensationsFactory.Create(100, 1f, 60, 0, 0, 0);
+        relajación3 = SensationsFactory.Create(100, 1.2f, 60, 0, 0, 0);
 
-        puntoExtra.WithMuscles(Muscle.All);
+        relajación1.WithMuscles(Muscle.Abdominal_L, Muscle.Abdominal_R, Muscle.Dorsal_L, Muscle.Dorsal_R);
+        relajación2.WithMuscles(Muscle.Dorsal_R, Muscle.Dorsal_R, Muscle.Arm_L, Muscle.Arm_R);
+        relajación3.WithMuscles(Muscle.Pectoral_L, Muscle.Pectoral_R);
 
-        bakedPuntoExtra = puntoExtra.Bake(3, "PuntoExtra");
+        
     }
 
     public void SendRelajación()
     {
         if (isConnected)
         {
-            OWO.Send(puntoExtra);
-            Debug.Log("send perder");
+            while (isConnected)
+            {
+                OWO.Send(relajación1.Append(relajación2.Append(relajación3.Append(relajación2))));
+            }
+            
+            Debug.Log("Send Relajación");
         }
         else
         {
