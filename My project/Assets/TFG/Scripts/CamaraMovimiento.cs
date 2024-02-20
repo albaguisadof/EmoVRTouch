@@ -11,10 +11,26 @@ public class CamaraMovimiento : MonoBehaviour
     private float densidadInicial = 0.004f;
     private float densidadIncremento = 0.00005f;
 
+    OWOScript owo = new OWOScript();
+    public bool activarOWO = true;
+
+    private void Awake()
+    {
+        if (activarOWO)
+        {
+            owo.Start();
+        }
+    }
+
     private void Start()
     {
         transform.position = new Vector3(600, 22, 15);
         RenderSettings.fogDensity = densidadInicial;
+
+        if (activarOWO)
+        {
+            owo.SendRelajación();
+        }
     }
 
     void Update()
@@ -35,12 +51,12 @@ public class CamaraMovimiento : MonoBehaviour
                 transform.position = new Vector3(transform.position.x, posicionTerreno.y + altura, transform.position.z);
             }
         }
-        else if(tiempo >= 65f && tiempo <= 75f)
+        else if(tiempo >= 65f && tiempo <= 70f)
         {
             RenderSettings.fogDensity += densidadIncremento;
             RenderSettings.fogColor = Color.black;
         }
-        else if(tiempo >= 65f)
+        else if(tiempo >= 70f)
         {
             Finalizar();
         }
@@ -49,7 +65,8 @@ public class CamaraMovimiento : MonoBehaviour
 
     private void Finalizar()
     {
-        Debug.Log("Terminando juego...");
+        owo.Disconnect();
+        Debug.Log("Juego Terminado");
         Application.Quit();
     }
 }

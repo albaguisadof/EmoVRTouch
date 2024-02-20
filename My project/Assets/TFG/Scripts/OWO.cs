@@ -80,11 +80,34 @@ public class OWOScript
         }
     }
 
+    void CrearRelajacion()
+    {
+        puntoExtra = SensationsFactory.Create(100, 3, 90, 0.3f, 0.3f, 0);
+
+        puntoExtra.WithMuscles(Muscle.All);
+
+        bakedPuntoExtra = puntoExtra.Bake(3, "PuntoExtra");
+    }
+
+    public void SendRelajación()
+    {
+        if (isConnected)
+        {
+            OWO.Send(puntoExtra);
+            Debug.Log("send perder");
+        }
+        else
+        {
+            Debug.LogWarning("Intento de enviar sensación sin conexión.");
+        }
+    }
+
 
     public void Start()
     {
         CrearColision();
         CrearPuntoExtra();
+        CrearRelajacion();
         Connect();
     }
 
