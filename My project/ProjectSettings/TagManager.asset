@@ -10,6 +10,8 @@ TagManager:
   - Anchor
   - Suelo
   - PuntoExtra
+  - XR Ring
+  - XR Right Controller
   layers:
   - Default
   - TransparentFX

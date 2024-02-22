@@ -78,7 +78,6 @@ public class Jugador : MonoBehaviour
         yield return new WaitForSeconds(2f);
         iniciar.SetActive(false);
         jugando = true;
-        csvWriter.WriteCSV();
     }
 
   
