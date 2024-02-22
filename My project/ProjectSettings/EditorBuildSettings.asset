@@ -9,8 +9,20 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 55daccc09a3b69647bbab145b54a3ab3
   - enabled: 1
+    path: Assets/TFG/Scenes/Prueba1.unity
+    guid: 61a962d3cd927d140b3e15738dc44dae
+  - enabled: 1
     path: Assets/TFG/Scenes/Nivel1.unity
     guid: af6506e7c69dd0145be8f662405b4f44
+  - enabled: 1
+    path: Assets/TFG/Scenes/Prueba2.unity
+    guid: 5f4c5f37e7c07b0488ebb5e08afd480e
+  - enabled: 1
+    path: Assets/TFG/Scenes/Nivel2.unity
+    guid: 433d85a5675935345842d5e15b632a4d
+  - enabled: 1
+    path: "Assets/TFG/Scenes/Relajaci\xF3n.unity"
+    guid: 6aaed223ab9fa9e4d801c06364432c64
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}

@@ -29,15 +29,25 @@ public class CamaraMovimiento : MonoBehaviour
 
         if (activarOWO)
         {
-            owo.SendRelajación();
+            StartCoroutine(owoSensación());
         }
+    }
+
+    IEnumerator owoSensación()
+    {
+        while (true)
+        {
+            StartCoroutine(owo.SendRelajación());
+          
+            yield return new WaitForSeconds(4.4f);
+        }
+        
     }
 
     void Update()
     {
         //Calculamos el tiemnpo
         tiempo += Time.deltaTime;
-
         if (tiempo < 60f)
         {
             //Desplazo en el terreno

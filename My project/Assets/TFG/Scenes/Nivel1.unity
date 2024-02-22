@@ -2003,6 +2003,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1205387804}
   - component: {fileID: 1205387803}
+  - component: {fileID: 1205387805}
   m_Layer: 0
   m_Name: CVS
   m_TagString: Untagged
@@ -2022,7 +2023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 157b548c21f8fdb41be75fb79b7fda6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jugador: PruebaAlba - Nivel1
+  jugador: Nivel1
   pelotas: []
 --- !u!4 &1205387804
 Transform:
@@ -2039,6 +2040,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1205387805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205387802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27d7d886331a8904eaf27cec9c9b0d3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1214743206
 GameObject:
   m_ObjectHideFlags: 0

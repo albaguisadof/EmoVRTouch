@@ -61,7 +61,6 @@ public class Jugador : MonoBehaviour
                 Finalizar();
             }
         }
-        
     }
 
      void Finalizar()
@@ -79,6 +78,7 @@ public class Jugador : MonoBehaviour
         yield return new WaitForSeconds(2f);
         iniciar.SetActive(false);
         jugando = true;
+        csvWriter.WriteCSV();
     }
 
   
@@ -107,7 +107,7 @@ public class Jugador : MonoBehaviour
     {
         vidas++;
         VidasChangedEvent?.Invoke(vidas);
-        owo.SendPuntoExtra();
+        StartCoroutine(owo.SendPuntoExtra());
     }
 
     public int ObtenerVidas()
