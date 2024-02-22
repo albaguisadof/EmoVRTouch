@@ -10,13 +10,9 @@ public class CambioEscena : MonoBehaviour
 
     private void Start()
     {
-        // Obtener el XRController adjunto a este objeto
         controller = GetComponent<XRController>();
-
-        // Obtener el ActionBasedController directamente del objeto en el que está adjunto
         actionBasedController = GetComponent<ActionBasedController>();
 
-        // Verificar si actionBasedController es nulo (no se pudo obtener del objeto actual)
         if (actionBasedController == null)
         {
             Debug.LogWarning("Este script requiere un ActionBasedController adjunto al mismo objeto.");
@@ -29,7 +25,7 @@ public class CambioEscena : MonoBehaviour
 
     private void OnDestroy()
     {
-        // Asegúrate de limpiar la suscripción al destruir el objeto
+        // Eliminar la suscripción al destruir el objeto
         if (actionBasedController != null)
         {
             actionBasedController.selectAction.action.performed -= CambiarEscena;
@@ -38,7 +34,7 @@ public class CambioEscena : MonoBehaviour
 
     private void CambiarEscena(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        // Cambiar la escena al presionar cualquier botón en el controlador
+        Jugador.tiempoJugado = 0;
         SceneManager.LoadScene(nombreEscena);
     }
 }

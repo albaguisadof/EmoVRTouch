@@ -69,8 +69,6 @@ public class Jugador : MonoBehaviour
         finalizar.SetActive(true);
         owo.Disconnect();
         csvWriter.WriteCSV();
-       // yield return new WaitForSeconds(1f);
-       // Application.Quit();
     }
 
     IEnumerator Iniciar()

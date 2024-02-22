@@ -61,22 +61,15 @@ public class CamaraMovimiento : MonoBehaviour
                 transform.position = new Vector3(transform.position.x, posicionTerreno.y + altura, transform.position.z);
             }
         }
-        else if(tiempo >= 65f && tiempo <= 70f)
+        else if(tiempo >= 60f && tiempo <= 65f)
         {
             RenderSettings.fogDensity += densidadIncremento;
             RenderSettings.fogColor = Color.black;
         }
-        else if(tiempo >= 70f)
+        else if(tiempo >= 65f)
         {
-            Finalizar();
+            owo.Disconnect();
         }
         
-    }
-
-    private void Finalizar()
-    {
-        owo.Disconnect();
-        Debug.Log("Juego Terminado");
-        Application.Quit();
     }
 }
