@@ -8,8 +8,6 @@ public class CamaraMovimiento : MonoBehaviour
     public float velocidad = 6.5f;
     public float altura = 4f;
     private float tiempo = 0f;
-    private float densidadInicial = 0.004f;
-    private float densidadIncremento = 0.00005f;
 
     OWOScript owo = new OWOScript();
     public bool activarOWO = true;
@@ -25,7 +23,6 @@ public class CamaraMovimiento : MonoBehaviour
     private void Start()
     {
         transform.position = new Vector3(600, 22, 15);
-        RenderSettings.fogDensity = densidadInicial;
 
         if (activarOWO)
         {
@@ -60,11 +57,6 @@ public class CamaraMovimiento : MonoBehaviour
                 Vector3 posicionTerreno = hit.point;
                 transform.position = new Vector3(transform.position.x, posicionTerreno.y + altura, transform.position.z);
             }
-        }
-        else if(tiempo >= 60f && tiempo <= 65f)
-        {
-            RenderSettings.fogDensity += densidadIncremento;
-            RenderSettings.fogColor = Color.black;
         }
         else if(tiempo >= 65f)
         {
