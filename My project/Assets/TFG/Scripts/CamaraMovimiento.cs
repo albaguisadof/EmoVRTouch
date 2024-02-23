@@ -11,6 +11,7 @@ public class CamaraMovimiento : MonoBehaviour
 
     OWOScript owo = new OWOScript();
     public bool activarOWO = true;
+    public AudioSource audio;
 
     private void Awake()
     {
@@ -18,6 +19,7 @@ public class CamaraMovimiento : MonoBehaviour
         {
             owo.Start();
         }
+        audio.Play();
     }
 
     private void Start()

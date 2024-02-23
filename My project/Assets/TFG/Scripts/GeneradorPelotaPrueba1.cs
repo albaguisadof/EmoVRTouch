@@ -25,7 +25,7 @@ public class GeneradorPelotaPrueba : MonoBehaviour
         while (contador < 2) 
         {
             // Generar posición aleatoria
-            float posicionZ = Random.Range(0f, 2.5f);
+            float posicionZ = Random.Range(0.25f, 2.25f);
             float posicionY = Random.Range(1f, 2f);
             float posicionX = -6f;
 

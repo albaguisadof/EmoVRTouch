@@ -41,15 +41,13 @@ public class Jugador : MonoBehaviour
         iniciar.SetActive(true);
         luzRoja.intensity = 0f;
 
-        if(activarOWO)
-        {
-            owo.Start();
-        }
+       
     }
 
     void Start()
     {
         StartCoroutine(Iniciar());
+        owo.Start();
     }
 
     void Update()
@@ -67,7 +65,6 @@ public class Jugador : MonoBehaviour
     {
         jugando = false;
         finalizar.SetActive(true);
-        owo.Disconnect();
         csvWriter.WriteCSV();
     }
 

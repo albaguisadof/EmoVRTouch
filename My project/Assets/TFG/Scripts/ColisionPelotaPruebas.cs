@@ -30,6 +30,8 @@ public class ColisionPelotaPruebas : MonoBehaviour
                 // Marcar la pelota como colisionada
                 pelotasColisionadas.Add(hit.collider.gameObject);
 
+                Jugador.Instance.PerderVida();
+
                 Debug.Log("Colisión");
 
                 audioColision.Play();
@@ -41,6 +43,8 @@ public class ColisionPelotaPruebas : MonoBehaviour
             {
                 // Marcar la pelota como colisionada
                 pelotasColisionadas.Add(hit.collider.gameObject);
+
+                Jugador.Instance.GanarVida();
 
                 Debug.Log("Vida extra");
 

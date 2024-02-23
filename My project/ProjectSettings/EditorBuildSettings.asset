@@ -10,7 +10,7 @@ EditorBuildSettings:
     guid: 55daccc09a3b69647bbab145b54a3ab3
   - enabled: 1
     path: Assets/TFG/Scenes/Inicio.unity
-    guid: bac172fdd23b198438411fd46f465de4
+    guid: 488cfbff79de3db44b45435391c95879
   - enabled: 1
     path: Assets/TFG/Scenes/Prueba1.unity
     guid: 61a962d3cd927d140b3e15738dc44dae
@@ -24,11 +24,17 @@ EditorBuildSettings:
     path: Assets/TFG/Scenes/Nivel2.unity
     guid: 433d85a5675935345842d5e15b632a4d
   - enabled: 1
-    path: "Assets/TFG/Scenes/Relajaci\xF3n.unity"
-    guid: 6aaed223ab9fa9e4d801c06364432c64
+    path: "Assets/TFG/Scenes/Relajaci\xF3n 2.unity"
+    guid: df292fa1617ec694e9bb3b37fe5f0930
   - enabled: 1
     path: Assets/TFG/Scenes/Fin.unity
-    guid: 58ec9cf316b846e47b9d3182aef07231
+    guid: 5f52bd63803340a4f9814de643231022
+  - enabled: 0
+    path: "Assets/TFG/Scenes/Relajaci\xF3n 1.unity"
+    guid: 6955dca7ede2385449e0c7fa8cc8e166
+  - enabled: 0
+    path: "Assets/TFG/Scenes/Relajaci\xF3n.unity"
+    guid: 6aaed223ab9fa9e4d801c06364432c64
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}

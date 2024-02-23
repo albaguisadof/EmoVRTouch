@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using OWOGame;
 
-public class OWOScript 
+public class OWOScript :MonoBehaviour
 {
     Sensation  colision, puntoExtra1, puntoExtra2, puntoExtra3, relajación1, relajación2, relajación3;
     BakedSensation  bakedColision, bakedPuntoExtra, bakedRelajacion;

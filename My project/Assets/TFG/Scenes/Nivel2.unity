@@ -1053,7 +1053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54b6883bcafaaf74b80226f40119204b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreEscena: "Relajaci\xF3n"
+  nombreEscena: "Relajaci\xF3n 1"
 --- !u!1 &565483881
 GameObject:
   m_ObjectHideFlags: 0

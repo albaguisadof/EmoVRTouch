@@ -30,7 +30,7 @@ public class GeneradorPelotaNivel2 : MonoBehaviour
             float posicionZ, posicionY, posicionX, velocidadAleatoria;
 
             posicionX = -6f;
-            posicionZ = Random.Range(0f, 2.5f);
+            posicionZ = Random.Range(0.25f, 2.25f);
             posicionY = Random.Range(1f, 2f);
 
             if (Jugador.tiempoJugado > 0 && Jugador.tiempoJugado <= 30)
@@ -86,7 +86,7 @@ public class GeneradorPelotaNivel2 : MonoBehaviour
             pelota.velocidad = velocidadAleatoria;
             pelota.tiempo = Jugador.tiempoJugado;
 
-            if (posicionZ >= 1.25f)
+            if (posicionZ >= 1f)
             {
                 pelota.posición = "Derecha";
             }
