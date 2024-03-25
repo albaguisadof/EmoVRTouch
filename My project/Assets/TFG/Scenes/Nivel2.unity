@@ -2026,7 +2026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 157b548c21f8fdb41be75fb79b7fda6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jugador: PruebaAlba - Nivel2
+  jugador: 25- Nivel2.1
   pelotas: []
 --- !u!4 &1205387804
 Transform:

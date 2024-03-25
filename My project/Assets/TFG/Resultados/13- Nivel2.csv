@@ -1,0 +1,48 @@
+Tipo, Velocidad, Posición, Tiempo, Colisión
+Pelota,7.18,Derecha,4.04,False
+Pelota,8.00,Derecha,6.04,False
+Pelota,7.07,Derecha,8.06,False
+Pelota,7.05,Derecha,10.07,False
+Punto Extra,8.55,Derecha,12.08,False
+Pelota,8.87,Derecha,14.09,False
+Pelota,8.91,Izquierda,16.09,False
+Pelota,8.85,Izquierda,18.10,False
+Pelota,7.71,Derecha,20.10,False
+Pelota,7.09,Derecha,22.11,False
+Pelota,7.18,Derecha,24.11,False
+Pelota,8.14,Izquierda,26.13,False
+Pelota,8.43,Izquierda,28.14,False
+Pelota,8.63,Derecha,30.14,False
+Punto Extra,10.49,Derecha,31.64,False
+Pelota,10.12,Izquierda,33.15,False
+Pelota,10.90,Derecha,34.66,False
+Pelota,10.80,Derecha,36.17,False
+Pelota,10.60,Izquierda,37.67,False
+Pelota,10.07,Izquierda,39.18,False
+Pelota,10.67,Derecha,40.69,False
+Pelota,10.33,Derecha,42.20,False
+Pelota,8.70,Izquierda,43.71,False
+Punto Extra,10.77,Derecha,45.21,False
+Pelota,10.07,Derecha,46.71,False
+Pelota,10.89,Izquierda,48.21,False
+Pelota,9.69,Derecha,49.72,False
+Pelota,10.50,Izquierda,51.22,False
+Pelota,10.16,Izquierda,52.73,False
+Pelota,10.34,Izquierda,54.23,False
+Pelota,9.07,Derecha,55.74,False
+Pelota,8.74,Izquierda,57.25,False
+Pelota,9.47,Derecha,58.75,False
+ 
+PELOTAS RECIBIDAS: , 30,90.91%
+, Aciertos: , 30, Derecha: , 17, Izquierda: ,13
+, , 100.00% , , 56.67%, ,43.33%
+, Errores: , 0, Derecha: , 0, Izquierda: ,0
+ 
+PUNTOS EXTRAS RECIBIDOS: , 3,9.09%
+, Obtenidos: , 0, Derecha: , 0
+, Esquivados: , 3, Derecha: , 3, Izquierda: ,0
+, , 100.00% , , 100.00%, ,0.00%
+ 
+PUNTOS FINALES:, 3
+ 
+OWO: ,True
