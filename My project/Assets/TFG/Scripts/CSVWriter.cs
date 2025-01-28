@@ -34,7 +34,7 @@ public class CSVWriter : MonoBehaviour
     private int puntosExtraEsquivadosIzq = 0;
     private int puntosExtraEsquivadosDer = 0;
 
-    SubirResultados cloud = new SubirResultados();
+ 
     void Start()
     {
         filename = Application.dataPath + "/TFG/Resultados/" + jugador + ".csv";
@@ -164,8 +164,6 @@ public class CSVWriter : MonoBehaviour
            
         }
         textWriter.Close();
-
-      //  cloud.SavePlayerFile(filename);
         
     }
 }

@@ -7,7 +7,6 @@ public class PelotaRebote : MonoBehaviour
     public float velocidadInicial = 8f;
 
 
-
     void Start()
     {
         Rigidbody rb = GetComponent<Rigidbody>();
